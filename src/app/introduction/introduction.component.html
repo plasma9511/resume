@@ -1,0 +1,75 @@
+<div nz-row>
+  <div nz-col nzSpan="8">
+    <div style="margin-top: 50px">
+      <h1>{{introData.subtitle}}</h1>
+      <h2>{{introData.heading}}</h2>
+      <p>{{introData.introduction}}</p>
+      <h2 style="margin-top: 50px">{{introData.tagHeading}}</h2>
+      <div style="width: 100%;">
+        <nz-tag *ngFor="let item of introData.tags" [nzColor]="tagColor[tagColorIndex()]" class="p-tags">{{item}}</nz-tag>
+      </div>
+    </div>
+  </div>
+  <div nz-col nzSpan="14" nzOffset="2">
+    <nz-avatar nzIcon="user" style="width: 300px; height: 300px; margin-left: calc(50% - 150px);" nzSrc="//zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png">
+    </nz-avatar>
+    <div style="margin-top: 50px">
+      <div>
+        <h2 style="display: inline-block">{{introData.contactDetails.title}}</h2>
+        <div style="display: inline-block; font-size: 20px; margin-left: 5px; line-height: 20px">
+          <a (click)="revealContact(tplTitle, tplContent, tplFooter)">
+            <i *ngIf="contactVisible" nz-icon nzType="eye-invisible" nzTheme="outline"></i>
+            <i *ngIf="!contactVisible" nz-icon nzType="eye" nzTheme="outline"></i>
+          </a>
+          <ng-template #tplTitle>
+            <span>{{introData.contactDetails.pass}}</span>
+          </ng-template>
+          <ng-template #tplContent>
+            <p>{{introData.contactDetails.passText}}</p>
+            <input nz-input type="password" [(ngModel)]="this.inputPassword">
+          </ng-template>
+          <ng-template #tplFooter>
+            <button nz-button nzType="primary" (click)="verifyPassword()">
+              OK
+            </button>
+          </ng-template>
+        </div>
+        <div style="display: block">
+          <div class="contact-wrapper">
+            <a *ngIf="contactVisible" [href]="'tel:'+introData.contactDetails.phone">
+              <i nz-icon nzType="phone" nzTheme="outline"></i>
+              <p>{{introData.contactDetails.phone}}</p>
+            </a>
+            <div *ngIf="!contactVisible">
+              <i nz-icon nzType="phone" nzTheme="outline"></i>
+              <p>047****970</p>
+            </div>
+          </div>
+          <div class="contact-wrapper">
+            <a *ngIf="contactVisible" [href]="'mailto:'+introData.contactDetails.email">
+              <i nz-icon nzType="mail" nzTheme="outline"></i>
+              <p>{{introData.contactDetails.email}}</p>
+            </a>
+            <div *ngIf="!contactVisible">
+              <i nz-icon nzType="mail" nzTheme="outline"></i>
+              <p>plas******@hotmail.com</p>
+            </div>
+          </div>
+          <div class="contact-wrapper">
+            <a *ngIf="contactVisible" [href]="'https://goo.gl/maps/jS6R2ntaXHmzCcWv8'">
+              <i nz-icon nzType="environment" nzTheme="outline"></i>
+              <p>{{introData.contactDetails.address}}</p>
+            </a>
+            <div *ngIf="!contactVisible">
+              <i nz-icon nzType="environment" nzTheme="outline"></i>
+              <p>60 ***** **, Lei*******, NSW 2040</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+

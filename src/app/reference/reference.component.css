@@ -1,0 +1,13 @@
+#reference-wrapper a:hover, #reference-wrapper a:hover h4, #reference-wrapper a:hover i{
+  color: #1890ff;
+}
+
+#reference-wrapper h4 {
+  transition: color 0.25s ease;
+}
+
+#reference-wrapper h4, #reference-wrapper i {
+  display: inline-block;
+  color: rgba(0, 0, 0, 0.85);
+  margin-right: 5px;
+}

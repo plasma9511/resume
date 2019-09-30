@@ -1,0 +1,61 @@
+#work-main-wrapper {
+  width: 100%;
+  height: calc(100vh - 88px - 42px);
+  margin-top: 24px;
+  overflow: hidden;
+  position: relative;
+}
+
+.left-nav-button {
+  color: rgba(0, 0, 0, 0.85);
+  transition: color 0.25s ease;
+  cursor: pointer;
+}
+
+.left-nav-button:hover {
+  color: #1890ff;
+}
+
+#workListWrapper {
+  height: 100%;
+  margin-bottom: 20px;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
+}
+
+#workListWrapper::-webkit-scrollbar {
+  display: none;
+}
+
+#workListWrapper {
+  position: relative;
+  left: 0;
+  width: 76%;
+  margin-left: 8%;
+  display: inline-block;
+  transition: all 0.25s ease;
+}
+
+#workListMenuWrapper {
+  position: relative;
+  left: 0;
+  width: 16%;
+  display: inline-block;
+  transition: all 0.25s ease;
+}
+
+#workListSort1, #workListSort2 {
+  font-size: 20px;
+  line-height: 20px;
+  margin: 0 5px;
+  opacity: 0.5;
+  transition: opacity 0.25s ease;
+  cursor: pointer;
+}
+
+#workListSort1:hover, #workListSort2:hover {
+  opacity: 1;
+}
+

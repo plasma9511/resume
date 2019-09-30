@@ -1,0 +1,19 @@
+<div nz-row *ngFor="let item of refData.items" style="margin-top: 20px" id="reference-wrapper">
+  <h3>{{item.name}}</h3>
+  <div>
+    <i nz-icon nzType="usergroup-add" nzTheme="outline"></i>
+    <h4>{{item.relationship}}</h4>
+  </div>
+  <a *ngIf="item.contact === 'teresa.yin@valspar.com'" [href]="'mailto:'+item.contact">
+    <i nz-icon nzType="mail" nzTheme="outline"></i>
+    <h4>{{item.contact}}</h4>
+  </a>
+  <a *ngIf="item.contact !== 'teresa.yin@valspar.com'" [href]="'tel:'+item.contact">
+    <i nz-icon nzType="phone" nzTheme="outline"></i>
+    <h4>{{item.contact}}</h4>
+  </a>
+  <div>
+    <i nz-icon nzType="build" nzTheme="outline"></i>
+    <h4>{{item.domain}}</h4>
+  </div>
+</div>

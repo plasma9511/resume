@@ -1,0 +1,17 @@
+.proj-img-button:first-child {
+  margin-top: 20px;
+}
+
+.proj-img-button {
+  margin-top: 10px;
+  width: max-content;
+  transition: color 0.25s ease;
+}
+
+.proj-img-button:hover h2{
+  color: #1890ff;
+}
+
+::ng-deep .ant-tooltip-inner {
+  width: max-content;
+}

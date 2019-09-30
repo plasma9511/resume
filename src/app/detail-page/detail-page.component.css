@@ -1,0 +1,68 @@
+.display-wrapper {
+  height: 100vh;
+  width: 100%;
+  padding: 48px;
+  position: absolute;
+  transition: top 0.3s ease;
+}
+
+.lanWrapper {
+  text-align: center;
+  height: 120px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.lanLogo {
+  line-height: 96px;
+  font-size: 96px;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.lanTitle {
+  display: block;
+}
+
+.lanWrapper:hover .lanLogo {
+  line-height: 64px;
+  font-size: 64px;
+}
+
+.lanContent {
+  font-size: 16px;
+}
+
+.lanWrapper:hover {
+  height: 200px;
+}
+
+.framework-icon {
+  display: block;
+  font-size: 48px;
+  line-height: 48px;
+}
+
+#framework-wrapper {
+  height: calc(100vh - 48px - 45px - 32px - 10px - 48px);
+  overflow-y: scroll;
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
+}
+
+#framework-wrapper::-webkit-scrollbar{
+  display: none;
+}
+
+#workListSort1, #workListSort2 {
+  font-size: 20px;
+  line-height: 20px;
+  margin: 0 5px;
+  opacity: 0.5;
+  transition: opacity 0.25s ease;
+  cursor: pointer;
+}
+
+#workListSort1:hover, #workListSort2:hover {
+  opacity: 1;
+}

@@ -1,0 +1,19 @@
+<div nz-row id="edu-main-wrapper">
+  <div nz-col nzSpan="24" style="display: table; height: 100%">
+    <nz-timeline style="display: table-cell; vertical-align: middle" nzMode="alternate">
+      <nz-timeline-item [nzDot]="dotTemplate" nzColor="green">
+        <h4 style="margin-bottom: 5px">{{eduData.icItem.name}}</h4>
+        <p style="margin-bottom: 0">{{eduData.icItem.degree}}</p>
+        <p>{{eduData.icItem.startYear}}-{{eduData.icItem.endYear}}</p>
+      </nz-timeline-item>
+      <ng-template #dotTemplate>
+        <i nz-icon nzType="loading" nzTheme="outline" style="font-size: 16px;"></i>
+      </ng-template>
+      <nz-timeline-item *ngFor="let item of eduData.items">
+        <h4 style="margin-bottom: 5px">{{item.name}}</h4>
+        <p style="margin-bottom: 0">{{item.degree}}</p>
+        <p>{{item.startYear}}-{{item.endYear}}</p>
+      </nz-timeline-item>
+    </nz-timeline>
+  </div>
+</div>

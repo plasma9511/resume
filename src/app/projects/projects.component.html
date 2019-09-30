@@ -1,0 +1,6 @@
+<div class="proj-img-button" *ngFor="let item of projectData.items">
+  <h2 [nz-tooltip]="img" nzPlacement="right">{{item.caption}}</h2>
+  <ng-template #img>
+    <img [src]="item.url" style="height: 50vh"/>
+  </ng-template>
+</div>

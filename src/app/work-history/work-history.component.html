@@ -1,0 +1,37 @@
+<div style="left: 338px; position: absolute; top: 58px">
+  <i id="workListSort1" class="fas fa-border-all" (click)="workListType(1)" [nz-tooltip]="workData.switch[0]"></i>
+  <i id="workListSort2" class="fas fa-border-style" (click)="workListType(2)" [nz-tooltip]="workData.switch[1]"></i>
+</div>
+<div id="work-main-wrapper">
+  <div id="workListMenuWrapper" style="height: 100%" >
+    <div style="display: table; height: 100%">
+      <nz-timeline style="display: table-cell; vertical-align: middle" nzMode="left">
+        <nz-timeline-item *ngFor="let item of workData.items">
+          <h4 class="left-nav-button" [id]="'work-menu'+item.id" (click)="scrollView(item.id)">{{item.name}}</h4>
+        </nz-timeline-item>
+      </nz-timeline>
+    </div>
+  </div>
+  <div id="workListWrapper">
+    <div [id]="'workList' + item.id" style="display: table; margin-bottom: 20px" [style.height]="worklist === '1' ? '100%' : 'max-content'" *ngFor="let item of workData.items">
+      <div style="margin-bottom: 20px; display: table-cell; vertical-align: middle">
+        <div style="margin-bottom: 20px">
+          <h2 style="margin-bottom: 0">{{item.name}}</h2>
+          <nz-tag nzColor="#87d068">{{item.type}}</nz-tag>
+          <nz-tag nzColor="#108ee9">{{item.data.dep}}</nz-tag>
+          <nz-tag nzColor="#f50">{{item.data.type}}</nz-tag>
+          <h4 style="margin-bottom: 0">{{item.startYear}}-{{item.endYear}}</h4>
+          <h4>{{item.position}} - {{item.data.location}}</h4>
+        </div>
+        <div style="margin-bottom: 10px">
+          <p style="display: inline; margin-right: 5px; color: #1890ff">{{workData.companyTitle}}</p>
+          <p style="display: inline">{{item.data.companyDes}}</p>
+        </div>
+        <div>
+          <p style="display: inline; margin-right: 5px; color: #1890ff">{{workData.JDTitle}}</p>
+          <p style="display: inline">{{item.data.jobDes}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

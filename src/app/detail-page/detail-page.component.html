@@ -1,0 +1,66 @@
+<div>
+  <div class="display-wrapper" [style.top]="scrollingEffect(0)">
+    <h1 style="line-height:32px;font-size: 32px; margin-bottom: 10px">{{contentData.introduction.title}}</h1>
+    <app-introduction *ngIf="sysLan === '1'" [lan]="1"></app-introduction>
+    <app-introduction *ngIf="sysLan === '2'" [lan]="2"></app-introduction>
+  </div>
+  <div class="display-wrapper" [style.top]="scrollingEffect(1)">
+    <div>
+      <h1 style="line-height:32px;font-size: 32px; margin-bottom: 10px;display: inline-block">{{contentData.work.title}}</h1>
+    </div>
+    <app-work-history *ngIf="sysLan === '1'" [lan]="1"></app-work-history>
+    <app-work-history *ngIf="sysLan === '2'" [lan]="2"></app-work-history>
+  </div>
+  <div class="display-wrapper" [style.top]="scrollingEffect(2)">
+    <h1 style="line-height:32px;font-size: 32px; margin-bottom: 10px">{{contentData.education.title}}</h1>
+    <app-history-component *ngIf="sysLan === '1'" [lan]="1"></app-history-component>
+    <app-history-component *ngIf="sysLan === '2'" [lan]="2"></app-history-component>
+  </div>
+  <div class="display-wrapper" [style.top]="scrollingEffect(3)">
+    <h1 style="line-height:32px;font-size: 32px; margin-bottom: 10px">{{contentData.skills.title}}</h1>
+    <nz-tabset>
+      <nz-tab [nzTitle]="contentData.skills.cLanguage.title">
+        <div nz-row style="height: calc(100vh - 48px - 45px - 32px - 10px - 48px);">
+          <div style="margin-top: 20px; height: 100%" nz-col *ngFor="let item of contentData.skills.cLanguage.items" nzSpan="4">
+            <div class="lanWrapper">
+              <i [class]="item.logo + ' lanLogo'"></i>
+              <h3 class="lanTitle">{{item.name}}</h3>
+              <div class="lanContent">
+                <p style="margin-bottom: 5px">{{item.level}}</p>
+                <p>{{item.length}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nz-tab>
+      <nz-tab [nzTitle]="contentData.skills.cFrameWork.title">
+        <div id="framework-wrapper">
+          <div *ngFor="let item of contentData.skills.cFrameWork.tabs" style="margin-bottom: 10px">
+            <h3>{{item.title}}</h3>
+            <div nz-row>
+              <div *ngFor="let menuItems of item.items" nz-col [nzSpan]="12" style="margin-bottom: 10px">
+                <i style="margin-bottom: 5px" [class]="menuItems.logo + ' framework-icon'"></i>
+                <p style="margin-bottom: 0">{{menuItems.name}}</p>
+                <span>{{menuItems.level}}</span>
+                <div style="display: block; margin-top: 5px" *ngIf="(menuItems.version)">
+                  Ver:
+                  <nz-tag style="margin-right: 5px" *ngFor="let item of menuItems.version" [nzColor]="tagColor[tagColorIndex()]">{{item}}</nz-tag>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nz-tab>
+    </nz-tabset>
+  </div>
+  <div class="display-wrapper" [style.top]="scrollingEffect(4)">
+    <h1 style="line-height:32px;font-size: 32px; margin-bottom: 10px">{{contentData.projects.title}}</h1>
+    <app-projects *ngIf="sysLan === '1'" [lan]="1"></app-projects>
+    <app-projects *ngIf="sysLan === '2'" [lan]="2"></app-projects>
+  </div>
+  <div class="display-wrapper" [style.top]="scrollingEffect(5)">
+    <h1 style="line-height:32px;font-size: 32px; margin-bottom: 10px">{{contentData.reference.title}}</h1>
+    <app-reference *ngIf="sysLan === '1'" [lan]="1"></app-reference>
+    <app-reference *ngIf="sysLan === '2'" [lan]="2"></app-reference>
+  </div>
+</div>
